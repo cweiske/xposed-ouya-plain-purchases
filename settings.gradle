@@ -1,0 +1,2 @@
+include ':xposed-ouya-plain-purchases'
+rootProject.name='OUYA plain purchases Xposed module'

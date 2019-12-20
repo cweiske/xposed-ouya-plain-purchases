@@ -1,0 +1,20 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="de.cweiske.ouya.plainpurchases">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/broken_encryption_48"
+        android:label="OUYA plain purchases"
+        tools:ignore="GoogleAppIndexingWarning">
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="Do not encrypt JSON purchase requests to the OUYA API" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="47" />
+    </application>
+</manifest>
