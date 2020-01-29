@@ -13,3 +13,8 @@ the input without encryption/decryption.
 
 __ https://repo.xposed.info/module/de.robv.android.xposed.installer
 __ http://cweiske.de/ouya-store-api-docs.htm
+
+
+Development hints
+=================
+- Version number can be changed in ``xposed-ouya-plain-purchases/build.gradle``
