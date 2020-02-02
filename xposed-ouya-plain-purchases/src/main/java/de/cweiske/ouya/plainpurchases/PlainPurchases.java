@@ -31,9 +31,19 @@ public class PlainPurchases implements IXposedHookLoadPackage
                 byte[] input = (byte[]) param.args[0];
 
                 //XposedBridge.log("input: " + new String(input));
-                //XposedBridge.log("returning unencrypted input");
                 //XposedBridge.log(new Exception("doFinal stack trace"));
-                param.setResult(input);
+
+                boolean isJson = input.length > 0
+                    && input[0] == 123// "{"
+                    && input[input.length - 1] == 125;// "}"
+                boolean isDummyKey = input.length == 16
+                    && (new String(input)).equals("0123456789abcdef");
+
+                //only prevent some data from being encrypted/decrypted
+                if (isJson || isDummyKey) {
+                    //XposedBridge.log("returning unencrypted input");
+                    param.setResult(input);
+                }
             }
         });
     }
